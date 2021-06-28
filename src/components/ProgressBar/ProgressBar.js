@@ -6,7 +6,22 @@ import { COLORS } from '../../constants';
 import VisuallyHidden from '../VisuallyHidden';
 
 const ProgressBar = ({ value, size }) => {
-  return <strong>{value}</strong>;
+	return (
+		<BarWrapper size>
+			<Progress value />
+		</BarWrapper>
+	);
 };
+
+const BarWrapper = styled.div`
+	width: 100%;
+	background-color: ${COLORS.transparentGray15};
+`;
+
+const Progress = styled.div`
+	width: 20%;
+	height: 30px;
+	background-color: ${COLORS.primary};
+`;
 
 export default ProgressBar;
